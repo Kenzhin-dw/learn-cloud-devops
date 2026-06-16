@@ -36,7 +36,20 @@ adalah untuk mengirimkan sebuah kata kedalam suatu file, echo "Hello Linux" > he
 - cat
 cat adalah concatenate untuk menampilkan isi dari file
 - cp
+cp adalah meng copy sebuah file
 - rm
-- mv 
+rm adalah file permission untuk menghapus sebuah file
+- mv
+mv adalah file permission untuk memindahkan sebuah file ke folder yang diinginkan
 - tail -f /dev/null
-- man for manual
+command/perintah ini adalah untuk menjalankan sebuah proses yang berjalan terus menerus tanpa melakukan aktivitas apapun. -f adalah follow atau memaksa perintah tetap terbuka dan memantau secara real time. /dev/null ini seperti lubang hitam, file ini kosong.
+- man
+man adalah perintah manual berisi penjelasan command yang bisa dijalankan dengan perintah tersebut
+
+# Hari 2 - Tue Jun 16 21:49:08 WIB 2026
+- history
+seperti namanya untuk melihat history command yang sudah dipakai
+- clear
+untuk membersihkan halaman yang sedang aktif agar clean
+- find
+find untuk melihat sebuah command 
