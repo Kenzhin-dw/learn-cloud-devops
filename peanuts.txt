@@ -1,1 +1,10 @@
-dunia halo
+README.md
+banana.txt
+base64
+catatan.md
+catatanv2.md
+commandline.md
+hello_copy.txt
+linux_practice
+peanuts.txt
+penuts.txt

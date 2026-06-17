@@ -365,3 +365,61 @@ stdout (terminal)
 
 Explanation : Operator '<' digunakan untuk mengarahkan input ke command, cat diatas tidak menunggu input dari keyboard, tapi membaca isi dari file1.txt
 
+
+========================================
+# Hari 3  
+# Wed Jun 17 15:41:22 WIB 2026
+========================================
+
+[ STDEER (Standard Error) ]
+
+Desc 	: sdeer adalah aliran output mengenai error, entah karena tidak terbaca atau tidak ada file yang ditemukan
+
+Example	: 
+ls /fake/directory > peanuts.txt
+
+Output 	:
+ls: cannot access '/fake/directory': No such file or directory
+
+Note 	:
+0: stdin (standard input)
+1: stdout (standard output)
+2: stderr (standard error)
+
+Example 2 : 
+ls /fake/directory 2> peanuts.txt
+
+Explanation 2 :
+Mengarahkan error kepada file peanuts.txt
+
+
+------------------------------------------
+
+[ PIPE TEE ]
+
+Desc	: Pipe berguna untuk menghubungkan 2 command sekaligus, dan tee ibarat menambahkan pipa T baru, contoh disini yaitu dengan membuat nama file disimpan disitu.
+
+Example : Echo "Helloww" | base64
+
+Output	: SGVsbG93dwo=
+
+Example	: ls -la /etc | tee etc_listing.txt | grep "conf"
+
+Explain	: Perintah ini :
+1. akan menampilkan isi dari /etc
+2. dan akan tee (menyimpan) di file etc_listing.txt
+3. selanjutnya akan mengambil kata yang berisi "conf"
+
+Flow	: 
+                     Tee
+ls -la /etc --------- T --------- grep "conf
+		      |  	
+		      |
+                  Menyimpan output
+		di file etc_listing.txt
+
+
+------------------------------------------
+
+[ 
+
