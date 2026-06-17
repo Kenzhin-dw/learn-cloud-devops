@@ -421,5 +421,48 @@ ls -la /etc --------- T --------- grep "conf
 
 ------------------------------------------
 
-[ 
+[ ENV Environment ]
 
+Desc 	: Environment variables adalah data (bukan file) yang disimpan di memori sesi shell, berisi informasi tentang konfigurasi sistem dan user yang sedang aktif (seperti home directory, username, path pencarian executable). Setiap proses anak (child process) yang dijalankan dari shell tersebut mewarisi salinan data ini. env adalah command untuk menampilkan SEMUA environment variable yang aktif saat itu.
+
+Example :
+1. echo $HOME       # tampilkan satu variable spesifik
+2. echo $USER
+3. env              # tampilkan semua variable
+4. echo $PATH       # daftar direktori tempat shell mencari executable
+
+Note 	: 
+export VAR=value → set variable, tapi cuma hidup di session terminal itu saja. Tutup terminal, hilang.
+Supaya permanen lintas session → tulis baris export VAR=value ke dalam ~/.bashrc (Bash) atau ~/.zshrc (Zsh). File ini cuma "resep" yang dijalankan ULANG setiap kali shell baru dibuka — bukan tempat variable disimpan.
+source ~/.bashrc → memaksa shell yang SEDANG berjalan untuk membaca ulang resep itu sekarang, tanpa perlu tutup-buka terminal.
+PATH itu variable krusial: kalau program nggak ketemu padahal sudah terinstall, kemungkinan besar foldernya belum masuk daftar PATH.
+
+
+------------------------------------------
+
+[ CUT ]
+
+Desc 	:  Cut adalah command untuk mengekstrak bagian tertentu teks/baris dalam file. Baik berdasarkan posisi karakter (-c), maupun berdasarkan field/kolom (-f).
+
+Example	: 	
+1. echo 'The quick brown; fox jumps over the lazy	dog' > sample.txt
+# (pastikan ada TAB literal antara "lazy" dan "dog", bukan spasi)
+
+2. cut -c 5 sample.txt
+
+3. cut -f 2 sample.txt
+
+4. cut -f 1 -d ";" sample.txt
+
+Output	: 
+1. q
+2. dog
+3. The quick brown
+
+Note	: 
+- Delimiter adalah pemisah
+- -c N → cut berdasarkan posisi karakter per baris, spasi dihitung.
+- -f N  cut berdasarkan FIELD/KOLOM. Default delimiter = TAB, BUKAN spasi.
+- -d "X" 
+
+--------------------------------------------
