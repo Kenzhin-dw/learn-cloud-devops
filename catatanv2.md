@@ -463,6 +463,81 @@ Note	:
 - Delimiter adalah pemisah
 - -c N → cut berdasarkan posisi karakter per baris, spasi dihitung.
 - -f N  cut berdasarkan FIELD/KOLOM. Default delimiter = TAB, BUKAN spasi.
-- -d "X" 
+- -d "X"
 
---------------------------------------------
+=========================================
+# HARI 4 - 
+# Thu Jun 18 20:27:43 WIB 2026
+=========================================
+
+
+[ PASTE ]
+
+Desc 	: Sama seperti command Cat, untuk menampilkan isi dari file, tetapi berbeda dengan comman ini menampilkan secara horizontal atau ke kanan
+
+Example : Jika kita mempunyai sebuah file .txt dan berisi seperti ini
+The 
+Quick
+Brown
+Fox
+
+Command 1 : "paste -s sample2.txt" akan terjadi 
+Command 2 : "paste -d ' ' -s sample2.txt"
+
+Output 	: The     quick   brown   fox dan The Quick Brown Fox
+ 
+Note : 
+- -s sebagai serial untuk memisahkan seperti perintah TAB
+- -d jika ditambahkan delimiter maka akan menyesuaikan perintah isi nya seberapa besar
+
+
+------------------------------------------
+
+[ HEAD ]
+
+Desc 	: Command Head adalah text handling untuk melihat isi file paling teratas 10 baris.
+
+Example : 
+	- Command 1 :	head /var/log/syslog
+	- Command 2 :	head -n 15 /var/log/syslog
+
+Note 	:
+- default head ada di 10 baris teratas.
+- -n adalah Number of line, dipakai jika ingin melihat berapa line yang ingin dilihat
+
+
+------------------------------------------
+
+[ TAIL ]
+
+Desc	: Command tail adalah berkebalikan dari head, untuk melihat kata akhir dalam file.
+
+Example :
+	- tail /var/log/syslog
+	- tail -n 20 /var/log/syslog
+	- tail -f /var/log/syslog
+
+Note	:
+- -f adalah flag, real time monitoring jika ada proses baru maka akan muncul langsung
+
+
+-------------------------------------------
+
+[ EXPAND AND UNEXPAND ]
+
+Desc 	: Perintah expand adalah untuk mengganti TAB menjadi spasi, dan unexpand adalah sebaliknya, command ini berfungsi untuk menjaga dokumen agar tidak berantakan saat dipindah tangankan
+
+Example : 
+	- expand sample.txt
+	- unexpand -a sample.txt
+
+Note	: 
+- -a
+unexpand membutuhkan -a agar tetap rapih semisal untuk code.
+
+
+-------------------------------------------
+
+[ JOIN AND SPLIT ]
+
+Desc	: 
