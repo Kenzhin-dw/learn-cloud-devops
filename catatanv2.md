@@ -536,8 +536,131 @@ Note	:
 unexpand membutuhkan -a agar tetap rapih semisal untuk code.
 
 
--------------------------------------------
+===========================================
+
+# Hari 5 - Fri Jun 19 14:29:20 WIB 2026
+===========================================
 
 [ JOIN AND SPLIT ]
+
+Desc	: Join dan Split adalah command untuk menggabungkan kata yang berbeda file, dan split untuk mempisahkan kata.
+
+Example : jika kondisi :
+file1.txt
+1 john
+2 Jane
+3 Mary
+
+file2.txt
+1 Doe
+2 Doe
+3 Sue
+
+command	: join file1.txt file2.txt
+1 John Doe
+2 Jane Doe
+3 Mary Sue
+
+Command : split somefile
+
+
+--------------------------------------------
+
+[ SORT ]
+
+Desc	: Sort adalah command untuk menampilkan file sesuai urutan yang kita mau
+
+Example	: sort -r peanuts.txt
+	  sort peanuts.txt
+	  sort -n peanuts.txt 
+
+Note :
+- -r stand for reverse sort
+- -n stand for numerical value
+
+
+--------------------------------------------
+
+[ TRANSLATE (tr) ]
+
+Desc	: tr adalah command to translate atau deletes character from input, tools untuk text manipulation dengan menggunakan pipe
+
+Example	: 
+echo "Hello world" | tr a-z A-Z
+HELLO WORLD
+
+echo "My address is 123 Main Street" | tr -d  '0-9'
+My address is  Main Street
+
+echo "Hello       World,      How           aree      You?" | tr -s
+Hello World, How Are You?
+
+Note	: 
+- tr a-z A-Z adalah perintah untuk mengubah kata yang kecil menjadi besar, begitupun sebaliknya
+- -d untuk mendelete suatu kata ataupun huruf
+- -s untuk squeeze
+
+
+--------------------------------------------
+
+[ UNIQ (Unique) ]
+
+Desc	: Uniq adalah command text processing untuk memfilter kalimat yang duplicate
+
+Example : uniq reading.txt
+uniq -c reading.txt
+uniq -u reading.txt
+uniq -d reading.txt
+sort reading.txt | uniq
+
+Note 	: 
+- -c stand for count
+- -u stand for unique
+- -d stand for duplicate
+
+--------------------------------------------
+
+[ WC and NL ]
+
+Desc	: wc dan nl untuk menghitung konten dan hitungan baris dalam sebuah file, wc (word count), nl (number list)
+
+Example	: wc /etc/passwd
+96	265	5925 /etc/passwd
+
+Note	: 
+1. the number of linex
+2. The number of words
+3. The number of bytes
+
+- -l untuk line
+- -w untuk word count
+- -c untuk byte count
+
+example : nl file.txt
+     1  i
+     2  like
+     3  turtles
+
+--------------------------------------------
+
+[ GREP ]
+
+Desc	: grep adalah text processing untuk mencari kata yang sesuai dari banyak kalimat dalam file
+
+Example	: 	grep fox sample.txt
+		grep -e command
+		grep -e "-v" /path/to/some/file.conf
+		env | grep -i User
+		ls /somedir | grep '.txt$'
+
+Note 	: 
+- -i for intensitive search
+- -c Count Matching lines
+- -o for show only the match
+- -f pattern from File
+
+--------------------------------------------
+
+[ REGEX ]
 
 Desc	: 
